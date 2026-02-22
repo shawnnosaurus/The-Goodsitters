@@ -213,7 +213,7 @@ a:hover {
 .hero {
   background: var(--colour-dark);
   padding: var(--space-2xl) var(--space-lg);
-  height: calc(100vh - 6rem);
+  min-height: calc(100vh - 6rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,7 +239,7 @@ a:hover {
   overflow: hidden;
   border: 3px solid var(--colour-gold);
   height: 100%;
-  min-height: 0;
+  max-height: calc(100dvh - 16rem);
 }
 
 .hero-image img {
@@ -247,30 +247,6 @@ a:hover {
   height: 100%;
   display: block;
   object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-
-  .hero-ctas {
-    justify-content: center;
-  }
-
-  .hero-image {
-    order: -1;
-    max-height: 18rem;
-  }
-
-  .hero-image img {
-    min-height: 14rem;
-  }
 }
 
 .hero-title {
@@ -307,6 +283,34 @@ a:hover {
   flex-wrap: wrap;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-md);
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-ctas {
+    justify-content: center;
+  }
+
+  .hero-image {
+    order: -1;
+    max-height: 10rem;
+  }
+
+  .hero-image img {
+    min-height: 14rem;
+  }
+}
+
 /* Sections */
 .section {
   max-width: 72rem;
@@ -325,6 +329,12 @@ a:hover {
   font-size: 1rem;
   color: var(--colour-text-muted);
   margin: 0 0 var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-lg);
+  }
 }
 
 /* Services */
@@ -403,7 +413,8 @@ a:hover {
 
 .trust-signals {
   display: flex;
-  gap: var(--space-sm);
+  justify-content: center;
+  gap: var(--space-xs);
   margin-top: var(--space-lg);
   flex-wrap: wrap;
 }
@@ -417,6 +428,12 @@ a:hover {
   font-weight: thin;
   font-style: italic;
   border-radius: 2rem;
+}
+
+@media (max-width: 768px) {
+  .trust-signals {
+    justify-content: center;
+  }
 }
 
 /* What to Expect */
@@ -461,11 +478,12 @@ a:hover {
 
 .team-member {
   text-align: center;
-  padding: var(--space-xl);
+  padding: var(--space-xl) 0;
   background: var(--colour-bg-white);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(51, 61, 74, 0.1);
   border-top: 3px solid var(--colour-gold);
+  white-space: nowrap;
 }
 
 .team-name {
@@ -558,7 +576,6 @@ a:hover {
 
 .contact-card {
   flex: 1;
-  min-width: 140px;
   padding: var(--space-lg);
   background: var(--colour-bg);
   border-radius: var(--radius);
