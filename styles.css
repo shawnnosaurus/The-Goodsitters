@@ -322,7 +322,7 @@ a:hover {
   }
 
   .hero-image::after {
-    background-position: center;
+    background-position: bottom center;
   }
 
   .hero-image img {
