@@ -235,11 +235,26 @@ a:hover {
 }
 
 .hero-image {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 3px solid var(--colour-gold);
   height: 100%;
   max-height: calc(100dvh - 16rem);
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("./imgs/the_goodsitters_logo3.png") no-repeat;
+  background-size: 50% 25%;
+  background-size: 20dvmin auto;
+  background-position: top right;
+  background-clip: content-box;
+  filter: drop-shadow(0 0 1px var(--colour-gold))
+    drop-shadow(0 0 1px var(--colour-gold))
+    drop-shadow(0 0 1px var(--colour-gold));
 }
 
 .hero-image img {
@@ -306,6 +321,10 @@ a:hover {
     max-height: 10rem;
   }
 
+  .hero-image::after {
+    background-position: center;
+  }
+
   .hero-image img {
     min-height: 14rem;
   }
@@ -316,6 +335,7 @@ a:hover {
   max-width: 72rem;
   margin: 0 auto;
   padding: var(--space-2xl) var(--space-lg);
+  border-bottom: 1px solid var(--colour-gold-light);
 }
 
 .section-title {
@@ -338,10 +358,6 @@ a:hover {
 }
 
 /* Services */
-.services {
-  background-color: var(--colour-bg);
-}
-
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -511,6 +527,30 @@ a:hover {
 .areas-list {
   font-size: 1.125rem;
   color: var(--colour-text-muted);
+}
+
+.areas-map {
+  width: 50dvmin;
+  height: auto;
+  max-width: 600px;
+  aspect-ratio: 1/0.75;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--colour-bg-alt);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.areas-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .areas-map {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 /* Testimonials */

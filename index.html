@@ -162,7 +162,7 @@
         <div class="about-grid">
           <div class="about-image">
             <img
-              src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80"
+              src="./imgs/the_goodsitters_logo2.jpeg"
               alt="Happy dog"
               loading="lazy"
             />
@@ -252,6 +252,17 @@
           Constantia, Plumstead, Claremont, Diep River, Noordhoek, Fish Hoek,
           Capri, Table View, Milnerton, and surrounding Southern suburbs.
         </p>
+        <div class="areas-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d89284.00115950452!2d18.566818647548363!3d-33.79849019134292!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sza!4v1771770815736!5m2!1sen!2sza"
+            width="600"
+            height="450"
+            style="border: 0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </section>
 
       <section class="section testimonials">
@@ -474,8 +485,7 @@
             <span>thegoodsitters@gmail.com</span>
           </a>
         </div>
-        <!-- Replace action with Formspree/Netlify Forms URL when going live -->
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" id="contact-form" action="#" method="post">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
           <label for="email">Email</label>
@@ -497,20 +507,23 @@
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.facebook.com/profile.php?id=100087576099185"
-          >Facebook</a
         >
+          Facebook
+        </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.instagram.com/thegoodsitters"
-          >Instagram</a
         >
+          Instagram
+        </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.google.com/maps/place/The+Goodsitters/@-37.2925795,25.308963,3553145m/data=!3m1!1e3!4m16!1m7!3m6!1s0x25ae5c1a3729a2ef:0x64974a5caed5440d!2sThe+Goodsitters!8m2!3d-38.7808044!4d27.989627!16s%2Fg%2F11vy_g3lls!3m7!1s0x25ae5c1a3729a2ef:0x64974a5caed5440d!8m2!3d-38.7808044!4d27.989627!9m1!1b1!16s%2Fg%2F11vy_g3lls?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D"
-          >Google Reviews</a
         >
+          Google Reviews
+        </a>
       </div>
     </footer>
 
@@ -570,6 +583,26 @@
         }
 
         setInterval(showNext, interval);
+      })();
+
+      (function () {
+        var form = document.getElementById("contact-form");
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var message = document.getElementById("message").value;
+          var subject = "Contact from " + name;
+          var body = "Message from " + name + " (" + email + "):\n\n" + message;
+          var mailto =
+            "mailto:thegoodsitters@gmail.com?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body);
+          window.location.href = mailto;
+        });
       })();
     </script>
   </body>
