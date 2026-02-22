@@ -667,7 +667,12 @@ a:hover {
     display: flex;
   }
 
+  .header {
+    height: auto;
+  }
+
   .nav {
+    padding: var(--space-sm);
     flex-wrap: wrap;
     gap: 0;
   }
