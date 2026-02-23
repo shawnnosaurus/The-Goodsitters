@@ -220,7 +220,7 @@ a:hover {
 }
 
 .hero-inner {
-  max-width: 72rem;
+  max-width: 80rem;
   max-height: 100%;
   margin: 0 auto;
   display: grid;
@@ -455,7 +455,6 @@ a:hover {
 /* What to Expect */
 .expect {
   background-color: var(--colour-bg-alt);
-  padding: var(--space-lg);
 }
 
 .expect .section-intro {

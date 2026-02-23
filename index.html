@@ -93,7 +93,7 @@
         </p>
         <div class="service-grid">
           <article class="service-card">
-            <div class="service-icon">&#128021;</div>
+            <div class="service-icon">&#129454;</div>
             <h3>Dog Walking</h3>
             <p>
               Daily walks and dog park trips to keep your pup happy and healthy.
@@ -116,7 +116,7 @@
             </p>
           </article>
           <article class="service-card">
-            <div class="service-icon">&#128054;</div>
+            <div class="service-icon">&#127772;</div>
             <h3>Dog Air BNB</h3>
             <p>
               Overnight boarding in a home environment when your pup needs a
@@ -124,7 +124,7 @@
             </p>
           </article>
           <article class="service-card">
-            <div class="service-icon">&#129436;</div>
+            <div class="service-icon">&#129358;</div>
             <h3>Enrichment</h3>
             <p>
               Stimulation and play for timid or high-energy pets. We tailor to
@@ -136,11 +136,11 @@
             <h3>Transportation</h3>
             <p>
               We'll get your pet where they need to go - vet visits, grooming,
-              or home.
+              parks, or home.
             </p>
           </article>
           <article class="service-card">
-            <div class="service-icon">&#128081;</div>
+            <div class="service-icon">&#128146;</div>
             <h3>Weddings</h3>
             <p>
               Dedicated pet sitters for your big day. Your fur-baby is part of
@@ -488,8 +488,8 @@
         <form class="contact-form" id="contact-form" action="#" method="post">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required />
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="4" required></textarea>
           <button type="submit" class="btn btn-primary">Send Message</button>
@@ -592,10 +592,10 @@
         form.addEventListener("submit", function (e) {
           e.preventDefault();
           var name = document.getElementById("name").value;
-          var email = document.getElementById("email").value;
+          var phone = document.getElementById("phone").value;
           var message = document.getElementById("message").value;
           var subject = "Contact from " + name;
-          var body = "Message from " + name + " (" + email + "):\n\n" + message;
+          var body = "Message from " + name + " (" + phone + "):\n\n" + message;
           var mailto =
             "mailto:thegoodsitters@gmail.com?subject=" +
             encodeURIComponent(subject) +
