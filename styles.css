@@ -429,7 +429,6 @@ a:hover {
 
 .trust-signals {
   display: flex;
-  justify-content: center;
   gap: var(--space-xs);
   margin-top: var(--space-lg);
   flex-wrap: wrap;
@@ -444,12 +443,6 @@ a:hover {
   font-size: 0.8125rem;
   font-weight: 100;
   border-radius: 2rem;
-}
-
-@media (max-width: 768px) {
-  .trust-signals {
-    justify-content: center;
-  }
 }
 
 /* What to Expect */
